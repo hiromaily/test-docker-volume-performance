@@ -1,15 +1,8 @@
-# Test Docker Volume Performance
-
-Test docker volume performance
-
-## How to
-
-```sh
-$ docker exec -it app sh
-
-# inside container
-$ cd /var/test
-$ time dd if=/dev/zero of=speedtest bs=1024 count=102400
+.PHONY: exec
+exec:
+	docker exec -it app sh
+# cd /var/test
+# time dd if=/dev/zero of=speedtest bs=1024 count=102400
 
 # e.g. result of Intel Mac
 # 102400+0 records in
@@ -26,4 +19,3 @@ $ time dd if=/dev/zero of=speedtest bs=1024 count=102400
 # real	0m 21.05s
 # user	0m 0.18s
 # sys	0m 1.99s
-```
